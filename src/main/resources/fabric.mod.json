@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "truckstop",
+	"version": "${version}",
+	"name": "Nora's Truck Stop",
+	"description": "Various blocks themed around the late 20th century!",
+	"authors": [
+		"miss_nora"
+	],
+	"contact": {
+
+	},
+	"license": "MIT",
+	"icon": "assets/truckstop/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"nora.truckstop.NorasTruckStop"
+		],
+		"fabric-datagen": [
+			"nora.truckstop.NorasTruckStopDataGenerator"
+		],
+		"client": [
+			"nora.truckstop.NorasTruckStopClient"
+		]
+	},
+	"mixins": [
+		"truckstop.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
