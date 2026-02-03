@@ -1,6 +1,7 @@
 package nora.truckstop.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -8,6 +9,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -323,159 +325,160 @@ public class ModBlocks {
                 new BlockItem(block, new Item.Settings()));
     }
 
-    public static final ItemGroup TRUCK_STOP_GROUP = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(NorasTruckStop.MOD_ID, "truck_stop_group"),
-            FabricItemGroup.builder()
-                    .icon(() -> new ItemStack(ModBlocks.CLAY_SHINGLES))
-                    .displayName(Text.translatable("itemgroup.truckstop.truck_stop_group"))
-                    .entries(((displayContext, entries) -> {
-                        entries.add(OCHRE_BRICKS);
-                        entries.add(OCHRE_BRICK_STAIRS);
-                        entries.add(OCHRE_BRICK_SLAB);
-                        entries.add(OCHRE_BRICK_WALL);
-                        entries.add(EBONY_BRICKS);
-                        entries.add(EBONY_BRICK_STAIRS);
-                        entries.add(EBONY_BRICK_SLAB);
-                        entries.add(EBONY_BRICK_WALL);
-                        entries.add(PEARL_BRICKS);
-                        entries.add(PEARL_BRICK_STAIRS);
-                        entries.add(PEARL_BRICK_SLAB);
-                        entries.add(PEARL_BRICK_WALL);
-
-                        entries.add(CLAY_SHINGLES);
-                        entries.add(CLAY_SHINGLE_STAIRS);
-                        entries.add(CLAY_SHINGLE_SLAB);
-                        entries.add(OCHRE_SHINGLES);
-                        entries.add(OCHRE_SHINGLE_STAIRS);
-                        entries.add(OCHRE_SHINGLE_SLAB);
-                        entries.add(EBONY_SHINGLES);
-                        entries.add(EBONY_SHINGLE_STAIRS);
-                        entries.add(EBONY_SHINGLE_SLAB);
-                        entries.add(PEARL_SHINGLES);
-                        entries.add(PEARL_SHINGLE_STAIRS);
-                        entries.add(PEARL_SHINGLE_SLAB);
-                        entries.add(LAPIS_SHINGLES);
-                        entries.add(LAPIS_SHINGLE_STAIRS);
-                        entries.add(LAPIS_SHINGLE_SLAB);
-                        entries.add(MINT_SHINGLES);
-                        entries.add(MINT_SHINGLE_STAIRS);
-                        entries.add(MINT_SHINGLE_SLAB);
-                        entries.add(PRISMARINE_SHINGLES);
-                        entries.add(PRISMARINE_SHINGLE_STAIRS);
-                        entries.add(PRISMARINE_SHINGLE_SLAB);
-                        entries.add(SHULKER_SHINGLES);
-                        entries.add(SHULKER_SHINGLE_STAIRS);
-                        entries.add(SHULKER_SHINGLE_SLAB);
-                        entries.add(SLATE_SHINGLES);
-                        entries.add(SLATE_SHINGLE_STAIRS);
-                        entries.add(SLATE_SHINGLE_SLAB);
-                        entries.add(EVERGREEN_SHINGLES);
-                        entries.add(EVERGREEN_SHINGLE_STAIRS);
-                        entries.add(EVERGREEN_SHINGLE_SLAB);
-                        entries.add(CHERRY_SHINGLES);
-                        entries.add(CHERRY_SHINGLE_STAIRS);
-                        entries.add(CHERRY_SHINGLE_SLAB);
-
-                        entries.add(VELVET_CUSHIONS);
-                        entries.add(VELVET_CUSHION_STAIRS);
-                        entries.add(VELVET_CUSHION_SLAB);
-                        entries.add(LEMON_VELVET_CUSHIONS);
-                        entries.add(LEMON_VELVET_CUSHION_STAIRS);
-                        entries.add(LEMON_VELVET_CUSHION_SLAB);
-
-                        entries.add(ARCADE_CARPET);
-
-                        entries.add(BEIGE_CORRUGATED_METAL_BLOCK);
-                        entries.add(BEIGE_CORRUGATED_METAL_STAIRS);
-                        entries.add(BEIGE_CORRUGATED_METAL_SLAB);
-                        entries.add(BEIGE_CORRUGATED_METAL_WALL);
-                        entries.add(BEIGE_CORRUGATED_METAL_WINDOW);
-                        entries.add(BEIGE_CORRUGATED_METAL_DOOR);
-                        entries.add(BEIGE_CORRUGATED_METAL_TRAPDOOR);
-                        entries.add(DECORATED_BEIGE_CORRUGATED_METAL_BLOCK);
-                        entries.add(DECORATED_BEIGE_CORRUGATED_METAL_STAIRS);
-                        entries.add(DECORATED_BEIGE_CORRUGATED_METAL_SLAB);
-                        entries.add(DECORATED_BEIGE_CORRUGATED_METAL_WALL);
-
-                        entries.add(WHITE_CORRUGATED_METAL_BLOCK);
-                        entries.add(WHITE_CORRUGATED_METAL_STAIRS);
-                        entries.add(WHITE_CORRUGATED_METAL_SLAB);
-                        entries.add(WHITE_CORRUGATED_METAL_WALL);
-                        entries.add(WHITE_CORRUGATED_METAL_WINDOW);
-                        entries.add(WHITE_CORRUGATED_METAL_DOOR);
-                        entries.add(WHITE_CORRUGATED_METAL_TRAPDOOR);
-                        entries.add(DECORATED_WHITE_CORRUGATED_METAL_BLOCK);
-                        entries.add(DECORATED_WHITE_CORRUGATED_METAL_STAIRS);
-                        entries.add(DECORATED_WHITE_CORRUGATED_METAL_SLAB);
-                        entries.add(DECORATED_WHITE_CORRUGATED_METAL_WALL);
-
-                        entries.add(VINYL_WOOD);
-                        entries.add(SMALL_VINYL_WOOD_PANELING);
-                        entries.add(LARGE_VINYL_WOOD_PANELING);
-
-                        entries.add(CARDBOARD_BOX);
-
-                        entries.add(GARAGE_PANEL);
-                        entries.add(GARAGE_PANEL_WALL);
-                        entries.add(GARAGE_WINDOW);
-                        entries.add(GARAGE_WINDOW_WALL);
-
-                        entries.add(BARE_DRYWALL);
-                        entries.add(BARE_DRYWALL_STAIRS);
-                        entries.add(BARE_DRYWALL_SLAB);
-                        entries.add(BARE_DRYWALL_WALL);
-                        entries.add(WHITE_DRYWALL);
-                        entries.add(WHITE_DRYWALL_STAIRS);
-                        entries.add(WHITE_DRYWALL_SLAB);
-                        entries.add(WHITE_DRYWALL_WALL);
-                        entries.add(BROWN_DRYWALL);
-                        entries.add(BROWN_DRYWALL_STAIRS);
-                        entries.add(BROWN_DRYWALL_SLAB);
-                        entries.add(BROWN_DRYWALL_WALL);
-                        entries.add(TAN_DRYWALL);
-                        entries.add(TAN_DRYWALL_STAIRS);
-                        entries.add(TAN_DRYWALL_SLAB);
-                        entries.add(TAN_DRYWALL_WALL);
-                        entries.add(RED_DRYWALL);
-                        entries.add(RED_DRYWALL_STAIRS);
-                        entries.add(RED_DRYWALL_SLAB);
-                        entries.add(RED_DRYWALL_WALL);
-                        entries.add(ORANGE_DRYWALL);
-                        entries.add(ORANGE_DRYWALL_STAIRS);
-                        entries.add(ORANGE_DRYWALL_SLAB);
-                        entries.add(ORANGE_DRYWALL_WALL);
-                        entries.add(YELLOW_DRYWALL);
-                        entries.add(YELLOW_DRYWALL_STAIRS);
-                        entries.add(YELLOW_DRYWALL_SLAB);
-                        entries.add(YELLOW_DRYWALL_WALL);
-                        entries.add(LIME_DRYWALL);
-                        entries.add(LIME_DRYWALL_STAIRS);
-                        entries.add(LIME_DRYWALL_SLAB);
-                        entries.add(LIME_DRYWALL_WALL);
-                        entries.add(TURQUOISE_DRYWALL);
-                        entries.add(TURQUOISE_DRYWALL_STAIRS);
-                        entries.add(TURQUOISE_DRYWALL_SLAB);
-                        entries.add(TURQUOISE_DRYWALL_WALL);
-                        entries.add(BLUE_DRYWALL);
-                        entries.add(BLUE_DRYWALL_STAIRS);
-                        entries.add(BLUE_DRYWALL_SLAB);
-                        entries.add(BLUE_DRYWALL_WALL);
-                        entries.add(INDIGO_DRYWALL);
-                        entries.add(INDIGO_DRYWALL_STAIRS);
-                        entries.add(INDIGO_DRYWALL_SLAB);
-                        entries.add(INDIGO_DRYWALL_WALL);
-                        entries.add(PURPLE_DRYWALL);
-                        entries.add(PURPLE_DRYWALL_STAIRS);
-                        entries.add(PURPLE_DRYWALL_SLAB);
-                        entries.add(PURPLE_DRYWALL_WALL);
-                        entries.add(MAGENTA_DRYWALL);
-                        entries.add(MAGENTA_DRYWALL_STAIRS);
-                        entries.add(MAGENTA_DRYWALL_SLAB);
-                        entries.add(MAGENTA_DRYWALL_WALL);
-                    }))
-                    .build());
+    public static final RegistryKey<ItemGroup> BUILDING_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(NorasTruckStop.MOD_ID, "building_group"));
+    public static final ItemGroup BUILDING_GROUP = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(ModBlocks.LEMON_VELVET_CUSHION_STAIRS))
+            .displayName(Text.translatable("itemgroup.truckstop"))
+            .build();
 
     public static void init() {
         NorasTruckStop.LOGGER.info("Painting Vinyls for "+NorasTruckStop.MOD_ID);
+
+        Registry.register(Registries.ITEM_GROUP, BUILDING_KEY, BUILDING_GROUP);
+        ItemGroupEvents.modifyEntriesEvent(BUILDING_KEY).register(TS_BLOCKS -> {
+            TS_BLOCKS.add(OCHRE_BRICKS);
+            TS_BLOCKS.add(OCHRE_BRICK_STAIRS);
+            TS_BLOCKS.add(OCHRE_BRICK_SLAB);
+            TS_BLOCKS.add(OCHRE_BRICK_WALL);
+            TS_BLOCKS.add(EBONY_BRICKS);
+            TS_BLOCKS.add(EBONY_BRICK_STAIRS);
+            TS_BLOCKS.add(EBONY_BRICK_SLAB);
+            TS_BLOCKS.add(EBONY_BRICK_WALL);
+            TS_BLOCKS.add(PEARL_BRICKS);
+            TS_BLOCKS.add(PEARL_BRICK_STAIRS);
+            TS_BLOCKS.add(PEARL_BRICK_SLAB);
+            TS_BLOCKS.add(PEARL_BRICK_WALL);
+
+            TS_BLOCKS.add(CLAY_SHINGLES);
+            TS_BLOCKS.add(CLAY_SHINGLE_STAIRS);
+            TS_BLOCKS.add(CLAY_SHINGLE_SLAB);
+            TS_BLOCKS.add(OCHRE_SHINGLES);
+            TS_BLOCKS.add(OCHRE_SHINGLE_STAIRS);
+            TS_BLOCKS.add(OCHRE_SHINGLE_SLAB);
+            TS_BLOCKS.add(EBONY_SHINGLES);
+            TS_BLOCKS.add(EBONY_SHINGLE_STAIRS);
+            TS_BLOCKS.add(EBONY_SHINGLE_SLAB);
+            TS_BLOCKS.add(PEARL_SHINGLES);
+            TS_BLOCKS.add(PEARL_SHINGLE_STAIRS);
+            TS_BLOCKS.add(PEARL_SHINGLE_SLAB);
+            TS_BLOCKS.add(LAPIS_SHINGLES);
+            TS_BLOCKS.add(LAPIS_SHINGLE_STAIRS);
+            TS_BLOCKS.add(LAPIS_SHINGLE_SLAB);
+            TS_BLOCKS.add(MINT_SHINGLES);
+            TS_BLOCKS.add(MINT_SHINGLE_STAIRS);
+            TS_BLOCKS.add(MINT_SHINGLE_SLAB);
+            TS_BLOCKS.add(PRISMARINE_SHINGLES);
+            TS_BLOCKS.add(PRISMARINE_SHINGLE_STAIRS);
+            TS_BLOCKS.add(PRISMARINE_SHINGLE_SLAB);
+            TS_BLOCKS.add(SHULKER_SHINGLES);
+            TS_BLOCKS.add(SHULKER_SHINGLE_STAIRS);
+            TS_BLOCKS.add(SHULKER_SHINGLE_SLAB);
+            TS_BLOCKS.add(SLATE_SHINGLES);
+            TS_BLOCKS.add(SLATE_SHINGLE_STAIRS);
+            TS_BLOCKS.add(SLATE_SHINGLE_SLAB);
+            TS_BLOCKS.add(EVERGREEN_SHINGLES);
+            TS_BLOCKS.add(EVERGREEN_SHINGLE_STAIRS);
+            TS_BLOCKS.add(EVERGREEN_SHINGLE_SLAB);
+            TS_BLOCKS.add(CHERRY_SHINGLES);
+            TS_BLOCKS.add(CHERRY_SHINGLE_STAIRS);
+            TS_BLOCKS.add(CHERRY_SHINGLE_SLAB);
+
+            TS_BLOCKS.add(VELVET_CUSHIONS);
+            TS_BLOCKS.add(VELVET_CUSHION_STAIRS);
+            TS_BLOCKS.add(VELVET_CUSHION_SLAB);
+            TS_BLOCKS.add(LEMON_VELVET_CUSHIONS);
+            TS_BLOCKS.add(LEMON_VELVET_CUSHION_STAIRS);
+            TS_BLOCKS.add(LEMON_VELVET_CUSHION_SLAB);
+
+            TS_BLOCKS.add(ARCADE_CARPET);
+
+            TS_BLOCKS.add(BEIGE_CORRUGATED_METAL_BLOCK);
+            TS_BLOCKS.add(BEIGE_CORRUGATED_METAL_STAIRS);
+            TS_BLOCKS.add(BEIGE_CORRUGATED_METAL_SLAB);
+            TS_BLOCKS.add(BEIGE_CORRUGATED_METAL_WALL);
+            TS_BLOCKS.add(BEIGE_CORRUGATED_METAL_WINDOW);
+            TS_BLOCKS.add(BEIGE_CORRUGATED_METAL_DOOR);
+            TS_BLOCKS.add(BEIGE_CORRUGATED_METAL_TRAPDOOR);
+            TS_BLOCKS.add(DECORATED_BEIGE_CORRUGATED_METAL_BLOCK);
+            TS_BLOCKS.add(DECORATED_BEIGE_CORRUGATED_METAL_STAIRS);
+            TS_BLOCKS.add(DECORATED_BEIGE_CORRUGATED_METAL_SLAB);
+            TS_BLOCKS.add(DECORATED_BEIGE_CORRUGATED_METAL_WALL);
+
+            TS_BLOCKS.add(WHITE_CORRUGATED_METAL_BLOCK);
+            TS_BLOCKS.add(WHITE_CORRUGATED_METAL_STAIRS);
+            TS_BLOCKS.add(WHITE_CORRUGATED_METAL_SLAB);
+            TS_BLOCKS.add(WHITE_CORRUGATED_METAL_WALL);
+            TS_BLOCKS.add(WHITE_CORRUGATED_METAL_WINDOW);
+            TS_BLOCKS.add(WHITE_CORRUGATED_METAL_DOOR);
+            TS_BLOCKS.add(WHITE_CORRUGATED_METAL_TRAPDOOR);
+            TS_BLOCKS.add(DECORATED_WHITE_CORRUGATED_METAL_BLOCK);
+            TS_BLOCKS.add(DECORATED_WHITE_CORRUGATED_METAL_STAIRS);
+            TS_BLOCKS.add(DECORATED_WHITE_CORRUGATED_METAL_SLAB);
+            TS_BLOCKS.add(DECORATED_WHITE_CORRUGATED_METAL_WALL);
+
+            TS_BLOCKS.add(VINYL_WOOD);
+            TS_BLOCKS.add(SMALL_VINYL_WOOD_PANELING);
+            TS_BLOCKS.add(LARGE_VINYL_WOOD_PANELING);
+
+            TS_BLOCKS.add(CARDBOARD_BOX);
+
+            TS_BLOCKS.add(GARAGE_PANEL);
+            TS_BLOCKS.add(GARAGE_PANEL_WALL);
+            TS_BLOCKS.add(GARAGE_WINDOW);
+            TS_BLOCKS.add(GARAGE_WINDOW_WALL);
+
+            TS_BLOCKS.add(BARE_DRYWALL);
+            TS_BLOCKS.add(BARE_DRYWALL_STAIRS);
+            TS_BLOCKS.add(BARE_DRYWALL_SLAB);
+            TS_BLOCKS.add(BARE_DRYWALL_WALL);
+            TS_BLOCKS.add(WHITE_DRYWALL);
+            TS_BLOCKS.add(WHITE_DRYWALL_STAIRS);
+            TS_BLOCKS.add(WHITE_DRYWALL_SLAB);
+            TS_BLOCKS.add(WHITE_DRYWALL_WALL);
+            TS_BLOCKS.add(BROWN_DRYWALL);
+            TS_BLOCKS.add(BROWN_DRYWALL_STAIRS);
+            TS_BLOCKS.add(BROWN_DRYWALL_SLAB);
+            TS_BLOCKS.add(BROWN_DRYWALL_WALL);
+            TS_BLOCKS.add(TAN_DRYWALL);
+            TS_BLOCKS.add(TAN_DRYWALL_STAIRS);
+            TS_BLOCKS.add(TAN_DRYWALL_SLAB);
+            TS_BLOCKS.add(TAN_DRYWALL_WALL);
+            TS_BLOCKS.add(RED_DRYWALL);
+            TS_BLOCKS.add(RED_DRYWALL_STAIRS);
+            TS_BLOCKS.add(RED_DRYWALL_SLAB);
+            TS_BLOCKS.add(RED_DRYWALL_WALL);
+            TS_BLOCKS.add(ORANGE_DRYWALL);
+            TS_BLOCKS.add(ORANGE_DRYWALL_STAIRS);
+            TS_BLOCKS.add(ORANGE_DRYWALL_SLAB);
+            TS_BLOCKS.add(ORANGE_DRYWALL_WALL);
+            TS_BLOCKS.add(YELLOW_DRYWALL);
+            TS_BLOCKS.add(YELLOW_DRYWALL_STAIRS);
+            TS_BLOCKS.add(YELLOW_DRYWALL_SLAB);
+            TS_BLOCKS.add(YELLOW_DRYWALL_WALL);
+            TS_BLOCKS.add(LIME_DRYWALL);
+            TS_BLOCKS.add(LIME_DRYWALL_STAIRS);
+            TS_BLOCKS.add(LIME_DRYWALL_SLAB);
+            TS_BLOCKS.add(LIME_DRYWALL_WALL);
+            TS_BLOCKS.add(TURQUOISE_DRYWALL);
+            TS_BLOCKS.add(TURQUOISE_DRYWALL_STAIRS);
+            TS_BLOCKS.add(TURQUOISE_DRYWALL_SLAB);
+            TS_BLOCKS.add(TURQUOISE_DRYWALL_WALL);
+            TS_BLOCKS.add(BLUE_DRYWALL);
+            TS_BLOCKS.add(BLUE_DRYWALL_STAIRS);
+            TS_BLOCKS.add(BLUE_DRYWALL_SLAB);
+            TS_BLOCKS.add(BLUE_DRYWALL_WALL);
+            TS_BLOCKS.add(INDIGO_DRYWALL);
+            TS_BLOCKS.add(INDIGO_DRYWALL_STAIRS);
+            TS_BLOCKS.add(INDIGO_DRYWALL_SLAB);
+            TS_BLOCKS.add(INDIGO_DRYWALL_WALL);
+            TS_BLOCKS.add(PURPLE_DRYWALL);
+            TS_BLOCKS.add(PURPLE_DRYWALL_STAIRS);
+            TS_BLOCKS.add(PURPLE_DRYWALL_SLAB);
+            TS_BLOCKS.add(PURPLE_DRYWALL_WALL);
+            TS_BLOCKS.add(MAGENTA_DRYWALL);
+            TS_BLOCKS.add(MAGENTA_DRYWALL_STAIRS);
+            TS_BLOCKS.add(MAGENTA_DRYWALL_SLAB);
+            TS_BLOCKS.add(MAGENTA_DRYWALL_WALL);
+        });
     }
 }

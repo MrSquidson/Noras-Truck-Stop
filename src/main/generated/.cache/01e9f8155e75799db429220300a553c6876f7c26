@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-03T14:55:51.8279455	Nora's Truck Stop/Block Loot Tables
+// 1.21.1	2026-02-03T15:39:32.3657497	Nora's Truck Stop/Block Loot Tables
 45ac417798aacb3bf06e4d71794eac4b54b89577 data\truckstop\loot_table\blocks\velvet_cushion_slab.json
 9d80bc9c8a3ae763518e2a768a66f72d4ae21263 data\truckstop\loot_table\blocks\orange_drywall_slab.json
 9f834af700d6b89c1a6aa444d2cacd561fb7c2e7 data\truckstop\loot_table\blocks\garage_window.json
@@ -54,9 +54,9 @@ e8eae67151c5e29ed50ab48536a60eec1a84b7ff data\truckstop\loot_table\blocks\garage
 6cb9ba69087e8759615acd7ce53f7dc1010b7037 data\truckstop\loot_table\blocks\tan_drywall_wall.json
 dcf2e812b5ae1df49c2a113ddf9900e5b1ed0f1d data\truckstop\loot_table\blocks\yellow_drywall.json
 c93232cbfed758da07cc133eb78d66c3cc918ae3 data\truckstop\loot_table\blocks\purple_drywall.json
-4459f070ff8d1ffb6ecc6606215e431adf407d07 data\truckstop\loot_table\blocks\ochre_shingles.json
-2437694f932f80b6d39d245f758a2dfdb60d06b7 data\truckstop\loot_table\blocks\vinyl_wood_wall.json
 a0e0de78b2088404c4a312761c0a7753015a5625 data\truckstop\loot_table\blocks\vinyl_wood_stairs.json
+2437694f932f80b6d39d245f758a2dfdb60d06b7 data\truckstop\loot_table\blocks\vinyl_wood_wall.json
+4459f070ff8d1ffb6ecc6606215e431adf407d07 data\truckstop\loot_table\blocks\ochre_shingles.json
 09452fa850cadc29426898f6fe0c214c831b6c1b data\truckstop\loot_table\blocks\turqouise_drywall_slab.json
 e0971aac1481204a5d703d6dcaa858e69c4c22a4 data\truckstop\loot_table\blocks\pearl_shingles.json
 e07534af1ba0294d9f850bbfd5b06e18fe8b23af data\truckstop\loot_table\blocks\cherry_shingle_stairs.json

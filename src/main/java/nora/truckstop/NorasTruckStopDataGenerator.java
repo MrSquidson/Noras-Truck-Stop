@@ -2,10 +2,7 @@ package nora.truckstop;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import nora.truckstop.datagen.ModBlockTagProvider;
-import nora.truckstop.datagen.ModLootTableProvider;
-import nora.truckstop.datagen.ModModelProvider;
-import nora.truckstop.datagen.ModRecipeProvider;
+import nora.truckstop.datagen.*;
 
 public class NorasTruckStopDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -13,6 +10,7 @@ public class NorasTruckStopDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModLanguageProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
