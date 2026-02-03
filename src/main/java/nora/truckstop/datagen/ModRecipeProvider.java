@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -24,8 +23,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.SMALL_VINYL_WOOD_PANELING, ModBlocks.VINYL_WOOD);
         offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LARGE_VINYL_WOOD_PANELING, ModBlocks.SMALL_VINYL_WOOD_PANELING);
 
-        createStairsRecipe(ModBlocks.VINYL_WOOD_STAIRS, Ingredient.ofItems(ModBlocks.VINYL_WOOD));
-        createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.VINYL_WOOD_STAIRS, Ingredient.ofItems(ModBlocks.VINYL_WOOD));
+        offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.VINYL_WOOD_SLAB, ModBlocks.VINYL_WOOD);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.OCHRE_BRICKS)
                 .pattern("BBB")
